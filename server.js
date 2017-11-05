@@ -1,5 +1,6 @@
-const robot = require("robotjs");
-const express = require('express');  
+const robot = require('robotjs');
+const config = require('config');
+const express = require('express');
 const app = express();
 const server = require('http').createServer(app);  
 const io = require('socket.io')(server);
@@ -9,11 +10,11 @@ io.on('connection', (socket) => {
     console.log(type);
     switch (type) {
       case 'right':
-        robot.keyTap("right");
+        robot.keyTap('right');
         break;
 
       case 'left':
-        robot.keyTap("left");
+        robot.keyTap('left');
         break;
     
       default:
@@ -24,4 +25,4 @@ io.on('connection', (socket) => {
 
 app.use('/', express.static(__dirname + '/client/www'));
 
-server.listen(3000);
+server.listen(config.port);
