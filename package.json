@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "clean": "rm client/www/*.js && rm -fr client/www/css",
+    "clean": "rm -fr client/www/*.js && rm -fr client/www/css",
     "copy": "cp -r client/css client/www",
     "build:webpack": "webpack",
     "build": "npm run clean && npm run copy && npm run build:webpack",

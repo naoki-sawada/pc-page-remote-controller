@@ -25,4 +25,6 @@ io.on('connection', (socket) => {
 
 app.use('/', express.static(__dirname + '/client/www'));
 
-server.listen(config.port);
+server.listen(config.port, () => {
+  console.log(`Server start at ${config.port} port!`);
+});
