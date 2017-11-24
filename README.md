@@ -8,7 +8,7 @@ This is the remote controller of pc page.
 ## Requirements
 
 * Node.js 6.10.0 or heigher
-
+* Python >= v2.5.0 & < 3.0.0
 
 ## Install
 
