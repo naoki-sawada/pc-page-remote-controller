@@ -23,8 +23,9 @@ io.on('connection', (socket) => {
   });
 });
 
+app.set('port', process.env.PORT || config.port || 3000);
 app.use('/', express.static(__dirname + '/client/www'));
 
-server.listen(config.port, () => {
-  console.log(`Server start at ${config.port} port!`);
+server.listen(app.get('port'), () => {
+  console.log(`Server start at ${app.get('port')} port!`);
 });
