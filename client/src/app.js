@@ -23,19 +23,19 @@ window.onload = () => {
     myElement.textContent = `${ev.type} gesture detected.`;
     switch (ev.type) {
       case 'swipeleft':
-        socket.emit('message', 'left');
+        socket.emit('message', 'right');
         break;
 
       case 'swiperight':
-        socket.emit('message', 'right');
-        break;
-
-      case 'tap':
         socket.emit('message', 'left');
         break;
 
+      case 'tap':
+        socket.emit('message', 'down');
+        break;
+
       case 'press':
-        socket.emit('message', 'right');
+        socket.emit('message', 'up');
         break;
     
       default:

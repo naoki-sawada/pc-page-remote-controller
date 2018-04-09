@@ -16,6 +16,14 @@ io.on('connection', (socket) => {
       case 'left':
         robot.keyTap('left');
         break;
+
+      case 'up':
+        robot.keyTap('up');
+        break;
+
+      case 'down':
+        robot.keyTap('down');
+        break;
     
       default:
         break;
